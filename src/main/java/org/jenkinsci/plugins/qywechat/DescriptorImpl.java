@@ -55,6 +55,14 @@ public class DescriptorImpl extends BuildStepDescriptor<Publisher> {
         config.mentionedId = mentionedId;
     }
 
+    public String getProjectName() {
+        return config.projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        config.mentionedId = projectName;
+    }
+
     public String getMentionedMobile() {
         return config.mentionedMobile;
     }
@@ -160,6 +168,7 @@ public class DescriptorImpl extends BuildStepDescriptor<Publisher> {
 
         unsaveConfig.webhookUrl = config.webhookUrl;
         unsaveConfig.mentionedId = config.mentionedId;
+        unsaveConfig.projectName = config.projectName;
         unsaveConfig.mentionedMobile = config.mentionedMobile;
         unsaveConfig.topicName = config.topicName;
 
@@ -220,6 +229,7 @@ public class DescriptorImpl extends BuildStepDescriptor<Publisher> {
         config.topicName = json.getString("topicName");
         config.mentionedId = json.getString("mentionedId");
         config.mentionedMobile = json.getString("mentionedMobile");
+        config.projectName = json.getString("projectName");
         config.useProxy = json.get("useProxy")!=null;
         if(config.useProxy && json.get("useProxy") instanceof JSONObject){
             JSONObject jsonObject = json.getJSONObject("useProxy");

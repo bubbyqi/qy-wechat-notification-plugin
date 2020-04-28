@@ -95,15 +95,15 @@ public class BuildOverInfo {
 
     private String getStatus(){
         if(null != result && result.equals(Result.FAILURE)){
-            return "<font color=\"warning\">失败!!!</font>\uD83D\uDE2D";
+            return "<font color=\"warning\">失败</font>\uD83D\uDE2D";
         }else if(null != result && result.equals(Result.ABORTED)){
-            return "<font color=\"warning\">中断!!</font>\uD83D\uDE28";
+            return "<font color=\"warning\">中断</font>\uD83D\uDE28";
         }else if(null != result && result.equals(Result.UNSTABLE)){
-            return "<font color=\"warning\">异常!!</font>\uD83D\uDE41";
+            return "<font color=\"warning\">异常</font>\uD83D\uDE41";
         }else if(null != result && result.equals(Result.SUCCESS)){
-            int max=successFaces.length-1,min=0;
-            int ran = (int) (Math.random()*(max-min)+min);
-            return "<font color=\"info\">成功~</font>" + successFaces[ran];
+          //  int max=successFaces.length-1,min=0;
+            //int ran = (int) (Math.random()*(max-min)+min);
+            return "<font color=\"info\">成功</font>";
         }
         return "<font color=\"warning\">情况未知</font>";
     }

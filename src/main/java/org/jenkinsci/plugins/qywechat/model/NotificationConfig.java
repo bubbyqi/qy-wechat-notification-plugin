@@ -75,4 +75,5 @@ public class NotificationConfig {
      * 仅在不稳定构建时发送
      */
     public boolean unstableSend = false;
+    public String projectName = "";
 }

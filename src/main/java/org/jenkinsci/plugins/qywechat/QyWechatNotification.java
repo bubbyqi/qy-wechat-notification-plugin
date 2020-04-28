@@ -100,9 +100,12 @@ public class QyWechatNotification extends Publisher implements SimpleBuildStep {
                 (result == Result.FAILURE && config.failSend) ||
                 (result == Result.UNSTABLE && config.unstableSend)) {
             //设置当前项目名称
-            if(run instanceof AbstractBuild){
-                this.projectName = run.getParent().getFullDisplayName() ;
-            }
+          // if(run instanceof AbstractBuild){
+               this.projectName = run.getParent().getFullDisplayName() ;
+
+          //     this.projectName = config.projectName;
+           // }
+          //  this.projectName = build.getProject().getFullDisplayName();
 
             //构建结束通知
             BuildOverInfo buildInfo = new BuildOverInfo(this.projectName, run, config);
